@@ -1,178 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>我的个人网页</title>
+<title>别踩白块之六彩缤纷plus+</title>
 <style>
-		body {background-color:#FFE8E0;margin:0;}
-		ul {
-    			list-style-type: none;
-    			margin: 0;
-    			padding: 0;
-    			overflow: hidden;
-    			background-color:#2B2B2B;
-    			position: fixed;
-    			top: 0;
-   				width: 100%;
-			}
-		li {
-   				float: left;
-			}
-		li a {
-    			display: block;
-    			color: white;
-   				text-align: center;
-    			padding: 14px 35px;
-    			text-decoration: none;
-			}
-		li a:hover:not(.active) {
-    			background-color: #111;
-			}
-		.active {
-   				 background-color:#BE7656
-			}
-		.first{
-				margin-top: 40px;
-				color: #FFFFFF;
-				font-size: 21px;
-			}			
-		.first .form{
-				height: 1000px;
-				background: url(大图.png) no-repeat;
-				background-size: cover;
-			}
-		.first .form .box{
-				padding: 350px 0px 0px 213px;
-				z-index: 999;
-			}		
-		section {
-    			width: 1500px;
-    			margin: 0 auto;
-   			 	border-bottom: 1px solid rgb(200, 200, 200);  
-			}
-			#introduction {    width: 960px;    height: 1080px;    margin: 0 auto;    text-align: center;} 
-			#introduction div:first-child {    font-size: 50px;    margin-top: 100px;} 
-			#introduction div:nth-child(2) {    margin-top: 30px;    width: 700px;    margin: 0 auto;} 
-			#learn {    width: 960px;    height: 1200px;    margin: 0 auto; text-align:center;} 
-			#learn video {    width: 750px; } 
-			#photo {    width: 960px;    height: 460px;    margin-top: 70px;    display: flex;    flex-wrap: wrap;    justify-content: space-between;    align-content: space-between;} 
-			#photo img {    width: 470px;    height: 350px;}
-			#tel {    width: 960px;    height: 400px;    margin: 0 auto;    text-align: center;} 
-			#tel div:first-child {    font-size: 40px;    margin-top: 100px;} 
-			#tel div:nth-child(2) {    margin-top: 30px;    width: 700px;    margin: 0 auto;} 
-</style>
+	* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    margin: 50px auto 0 auto;
+    width: 600px;
+    height: auto;
+    border: solid 1px #222;
+}
+
+/* 内容区域 */
+#cont {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 内容区域里面的go区域 */
+#go {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    font: 700 60px '微软雅黑';
+    text-align: center;
+    z-index: 99;
+}
+#go span {
+    cursor: pointer;/*光标呈现为指示链接的指针（一只手）*/
+    background-color: #fff;
+    border-bottom: solid 1px #222;
+}
+
+/* 内容区域里面的游戏区域 ，注意这里定位向上移了一行的距离*/
+#main {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    top: -150px;/*隐藏了一部分的原因*/
+}
+/* 设置每一行的高度 */
+.row {
+    width: 600px;
+    height: 150px;
+}
+/* 设置行里面的每一个格子 */
+.row div {
+	/*默认颜色是白色*/
+    width: 99px;
+    height: 149px;
+    border: solid 1px #222;
+    float: left;
+    border-top-width: 0;
+    border-left-width: 0;
+    cursor: pointer;/*光标呈现为指示链接的指针（一只手）*/
+}
+/* 计数区域 */
+#count {
+    border-top: solid 1px #222;
+    width: 600px;
+    height: 50px;
+    font: 700 36px/50px '微软雅黑';
+    text-align: center;
+}
+/*#cont里面设置了两个大小一样的div：#go和#main，并且给#main设置了一个top值-150px，向上移150px原因是因为要制造从上往下掉的效果，所以第一行最开始是看不见的，得慢慢移入可视区里面来，正是不断改变top值，从而产生下落的效果，#go和#main的同时设置，是为了判断游戏进行地成功或失败*/
+	
+#explain {
+   
+    height: 50px;
+    font: 400 24px '微软雅黑';
+    text-align: center;
+}	
+	</style>
 </head>
 <body>
-<ul>
-  <li><a class="active" href="#home">首页</a></li>
-  <li><a href="#a">简介</a></li>
-  <li><a href="#c">作品</a></li>
-  <li><a href="#d">联系</a></li>
-</ul>
-<div class="first" id="home">
-		    	<div class="form">
-		    		<div class="box">
-						<div style="font-size: 30px;
-						background-color: rgba(189,116,89,0.9);
-						color: #FFFFFF;
-						font-size: 19px;
-						width: 250px;
-						height: 40px;
-						text-align:center;
-						line-height: 40px;
-						font-weight: lighter;
-						text-indent : 5px;
-						letter-spacing: 0.5px;" >
-							ZHOUXIAOLONG
-						</div>
-						<div style="height: 7px;">
-						</div>
-						<div style="background-color: rgba(40,42,42,0.8);
-						color: #FFFFFF;
-						font-size: 39px;
-						width: 500px;
-						height: 80px;
-						text-align:center;
-						line-height: 80px;
-						font-weight: bold;">
-							我的个人网页	
-						</div>
-						<div style="height: 7px;">
-						</div>
-						<div style="background-color: rgba(40,42,42,0.8);
-						color: #FFFFFF;
-						font-size: 18px;
-						width: 400px;
-						height: 55px;
-						text-align:center;
-						line-height: 55px;
-						font-weight: lighter;">
-							年轻人要多听音乐才不会胡思乱想	
-						</div>
-		    		</div>		    		
-		    	</div>
-</div>
-<div id="a" style="height: 20px;"></div>	
-<section>        
-  <div id="introduction">  
-		  <div>个人介绍</div>     
-		  	<div style="height: 40px;"></div>
-		  <div style="font-weight:200；">互联网冲浪十级学者 宝可梦奶茶奶茶大师 CSGO白给专家</div>
-		  <div id="con">
-			<div id="head">
-				  <div>	<img src="1.jpg" width="150" height="150"></div>
-			  <div style="height: 20px;"></div>
-			<b>Satonaka halu</b>                                                          
-			</div>
-			<div id="item">
-				<br>&nbsp &nbsp HDUER<br>
-				&nbsp &nbsp  大二<br><br>
-				&nbsp &nbsp Changsha<br>
-				&nbsp &nbsp CN<br><br>
-				&nbsp &nbsp QQ:1983717866&nbsp
-				&nbsp &nbsp Tel:147&nbsp 8997&nbsp 1360<br>
-				&nbsp &nbsp Mail:<i>1983871866@qq.com</i>
-			</div>
-			  <div style="height: 40px;"></div>
-			<div>
-				<img src="2.jpg" width="400" height="300">
-			</div><br>
-			<div id="bot">
-			  i wanna say n 55iw ! n paau ! n a^o7 !
-			</div>
-		</div>
-	  </div>   
-	<div id="c" style="height: 40px;"></div> 
-</section>	
-<section> 
-	<div style="height: 20px;"></div>
-	<h2 style="font-weight:500；">今年作品</h2>
-	<div style="height: 20px;"></div>
-  <div id="learn">            
-		<div style=" width: 750px;; display:inline-block;">
-            <video controls><source src="1.mp4" type="video/mp4"</video>
-		</div> 
-		<div style="height: 10px;"><p style="font-size: 24px;    margin-top: 50px;">照片展示</p>
-		</div>
-		 <div id="photo">                
-			  <img src="1.png" />                
-			  <img src="2.png" />                          
-		  </div>        
-		<p style="font-size: 24px;    margin-top: 20px;">更多及往年作品待开发...</p>
-		</div>
-	  <div id="d" style="height: 40px;"></div>
-</section>
-<section>        	  
-	<div id="tel">
-		  <div>联系本人</div>     
-		  	<div style="height: 20px;"></div>
-		  <div>如果有任何问题，你可以通过以下方式联系我！</div><br>
-		<a href="https://weibo.com/u/5993397156?topnav=1&wvr=6&topsug=1&is_all=1#_loginLayer_1594812070640" target="new"
-	style="font-family:courier;font-size: 24px;display:block;">My Weibo</a><br><br>
-		&nbsp &nbsp QQ:1983717866&nbsp<br><br>
-				&nbsp &nbsp Tel:147&nbsp 8997&nbsp 1360<br><br>
-				&nbsp &nbsp Mail:<i>1983871866@qq.com</i><br><br>
-  </div>  
-</section>
+	
+    <!--在最外层的盒子-->
+    <div class="box">
+    <!--上层游戏区域-->
+        <div id="cont">
+            <div id="go">
+                <span>点击开始</span>
+            </div>
+            <div id="main"></div>
+        </div>
+     <!--显示得分的区域-->
+        <div id="count"></div>
+    </div>
+	<div id="explain">
+		<p>游戏说明：在有黑色块时，你只能点击黑色块，而在没有黑色块时，你需要点击彩色块<br>但如果同一行有黑色块时你点击了彩色块，游戏将会结束</p>
+	</div>
 </body>
+<script>
+	
+	//window.onload() 方法用于在网页加载完毕后立刻执行的操作
+	window.onload =function(){
+		
+    //获取内容区里面得#main和#go，以及获取计数区。
+    var main = document.getElementById('main');
+    var go = document.getElementById('go');
+    var count = document.getElementById('count');
+		
+    //设置六种颜色,数组
+    cols = ['#cb99c5', '#E15650', '#7fccde', '#6698cb','#82c8a0','#fa5a5a'];
+		
+    //动态创建div
+    function CDiv(classname) {
+		
+        //创建div节点，为一行
+        var Div = document.createElement('div')
+		
+        //生成随机数，Math.floor()是四舍五入的作用，产生的数永远不会大于6，产生的随机数表示那个有颜色的那一个
+        index = Math.floor(Math.random() * 6)
+		indextwo = Math.floor(Math.random() * 6)
+        //设置class
+        Div.className = classname
+
+        //在一行里面动态添加四个div，一行里面的四块
+        for (var i = 0; i < 6; i++) {
+            var iDiv = document.createElement('div')
+			
+			//appendChild() 方法向节点添加最后一个子节点
+            Div.appendChild(iDiv)
+        }
+
+        //判断#main里面是否有元素
+        if (main.children.length == 0) {
+			//同上
+            main.appendChild(Div);
+        } else {
+			
+            //如果有元素，则在该元素之前插入，insertBefore() 方法在您指定的已有子节点之前插入新的子节点
+            main.insertBefore(Div, main.children[0]);
+        }
+        //随机的设置六个div块的背景颜色
+		//children 属性返回元素的子元素的集合，是一个 HTMLCollection 对象。根据子元素在元素中出现的先后顺序进行排序。使用 HTMLCollection对象的 length属性获取子元素的数量，然后使用序列号(index，起始值为0)访问每个子元素。
+		//index使得色块随机
+        Div.children[index].style.backgroundColor = '#000';
+		Div.children[indextwo].style.backgroundColor = cols[index];
+		
+		//为黑色的色块定义一个 i 的名字
+        Div.children[index].className = "i";
+    }
+		
+		//移动
+    function move(obj) {
+		
+        //默认速度与计分
+        var speed = 4, num = 0;
+		
+        //自定义一个定时器,每隔20毫秒执行一次，20在很下面
+        obj.timer = setInterval(function () {
+			
+            //速度
+			//parseInt() 函数可解析一个字符串，并返回一个整数
+			//getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象，只读
+			//getComputedStyle(obj, null)['top']方法就是用来实现给main获取设置top属性。
+            var step = parseInt(getComputedStyle(obj, null)['top']) + speed;
+			//不断改变top值，从而产生下落的效果
+			
+            obj.style.top = step + 'px'
+            if (parseInt(getComputedStyle(obj, null)['top']) >= 0) {
+				//达到条件就创建一行div
+                CDiv('row');
+                obj.style.top = -150 + 'px';
+            }
+			//判断行数，界面四行，隐藏各一行共六行
+            if (obj.children.length == 6) {
+				
+                for (var i = 0; i < 6; i++) {
+					//检查最下一行四个div
+					//如果有颜色的没被点击改变 i 的属性
+                    if (obj.children[obj.children.length - 1].children[i].className == 'i') {
+                        //游戏结束，固定游戏界面
+                        obj.style.top = '-150px';
+                        count.innerHTML = '游戏结束,最高得分: ' + num;
+                        //关闭定时器
+                        clearInterval(obj.timer);
+                        //显示开始游戏处变为游戏结束
+                        go.children[0].innerHTML = '游戏结束';
+						//在上方重新出现
+                        go.style.display = "block";
+                    }
+                }
+				//减少一行方块
+                obj.removeChild(obj.children[obj.children.length - 1]);
+            }
+			
+            //点击与计分
+            obj.onmousedown = function (event) {//event事件通常与函数结合使用，函数不会在事件发生前被执行
+				
+                // 兼容IE,因为在IE/Opera中，是window.event，而在Firefox中，是event
+                event = event || window.event;
+				
+				//点击的不是白盒子
+				//event.target ? event.target : event.srcElement即触发点击事件对象，内嵌判断运算，之所以要判断还是ie和火狐的兼容问题
+                if ((event.target ? event.target : event.srcElement).className == 'i') {
+					
+                    //点击后的盒子颜色
+                    (event.target ? event.target : event.srcElement).style.backgroundColor = "#bbb";
+					
+                    //清除盒子标记
+                    (event.target ? event.target : event.srcElement).className = '';
+                    //计分
+                    num++;
+                    //显示得分
+                    count.innerHTML = '当前得分: ' + num;
+                }
+                
+				
+				//点击其他区域游戏结束 
+				else {
+                    //游戏结束,同上
+                    obj.style.top = 0;
+                    count.innerHTML = '游戏结束,最高得分: ' + num;
+                    //关闭定时器
+                    clearInterval(obj.timer);
+                    //显示开始游戏
+                    go.children[0].innerHTML = '游戏结束';
+                   go.style.display = "block";
+                }
+				
+                //盒子加速
+                if (num % 10 == 0) {
+                    speed++; 
+                }
+            }
+            //松开触发停止
+            obj.onmouseup = function (event) {
+            }
+        }, 20)
+		
+    }
+		//点击开始盒子
+    go.children[0].onclick = function(){
+        if (main.children.length) {
+			
+            //清除main里面所有盒子
+            main.innerHTML = '';
+        }
+        //清空计分
+        count.innerHTML = '游戏开始';
+        //隐藏开始盒子
+        this.parentNode.style.display = "none";
+		//开始运行移动程序
+        move(main);
+    }
+}
+</script>
 </html>
